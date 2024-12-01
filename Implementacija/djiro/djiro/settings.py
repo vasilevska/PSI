@@ -54,9 +54,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt.token_blacklist'
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8080",
-]
+CORS_ALLOW_ALL_ORIGINS = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -97,10 +95,13 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'djiro',
-        'USER': 'root',
-        'PASSWORD': 'root',  # TODO: root
-        'HOST': '127.0.0.1',
-        'PORT': '3306' # TODO: 3306
+        'USER': 'aleksa@djiro',
+        'PASSWORD': 'Sifra123',  # TODO: root
+        'HOST': 'djiro.mysql.database.azure.com',
+        'PORT': '3306', # TODO: 3306
+        'OPTIONS': {
+            'sql_mode': 'traditional'
+        }
     }
 }
 
